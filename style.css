@@ -1,0 +1,316 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* Header */
+.header {
+    position: fixed;
+    right: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+    z-index: 100;
+}
+
+.logoimg {
+    width: 8em;
+    height: auto;
+    border-radius: 1.5em;
+    background-color: white;
+    border: 1px solid;
+}
+
+.nav-links {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 15px;
+    border: 1px solid;
+    background-color: rgb(8, 41, 27);
+    border-radius: 3px;
+    font-weight: bold;
+    transition: .5s
+}
+.nav-links a:hover{
+    color: rgb(8, 41, 27);
+    background-color: white ;
+    font-size: 18px;
+}
+
+
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Vertical Navigation */
+.nav-links.active {
+    flex-direction: column;
+    position: absolute;
+    right: 20px;
+    top: 60px;
+    background-color: #333;
+    border-radius: 8px;
+    padding: 10px 20px;
+}
+
+.nav-links.active li {
+    margin: 10px 0;
+}
+
+/* Sign-Up Section */
+.signup {
+    padding: 90px 20px;
+    text-align: center;
+}
+.signup .form {
+    display: inline-block;
+    margin-bottom: 1.5em;
+}
+.input{
+    border-radius: 1em;
+    box-shadow: inset 2px 2px 10px rgba(0,0,0, 0.3);
+    border: 1px solid;
+}
+
+.signup input[type="email"] {
+    padding: 10px;
+    margin-right: 10px;
+}
+
+.signup button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: 1px solid;
+    cursor: pointer;
+}
+
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 20px;
+    background: #f4f4f4;
+}
+
+.hero h1 {
+    font-size: 2.2em;
+}
+
+.hero p {
+    margin: 20px 0;
+    font-size: 1.2em;
+}
+
+.imgcontainer img {
+    width: 100%;
+    max-width: 250px;
+    border-radius: 4em;
+}
+.buttons{
+    padding: 8px 15px ;
+    color: white;
+    background-color: rgb(8, 41, 27);
+    border-radius: .5em;
+    font-weight: bold;
+    border: 1px solid;
+    transition: .5s;
+}
+.buttons:hover{
+    color: rgb(8, 41, 27);
+    background-color: white;
+    font-size: 14px;
+    cursor: pointer;
+}
+/* Features Section */
+.features {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.feature-list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.feature-item {
+    box-shadow: 10px 10px 10px rgb(0, 0, 0 , 0.2);
+    width: 30%;
+    margin: 20px 0;
+}
+
+.sub_images {
+    width: 100%;
+    max-height: 50%;
+}
+
+/* Video Section */
+.video-section {
+    text-align: center;
+    padding: 20px;
+    background-color: #fff;
+    margin-bottom: 0px;
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px; /* Adjust max width for larger screens */
+    margin: 0 auto;
+    overflow: hidden;
+    /* Default for mobile (16:9) */
+    padding-bottom: 56.25%;
+    height: 0;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 5em;
+    width: 80%;
+    height: 49%;
+
+}
+
+/* Testimonials Section */
+.testimonials {
+    padding: 50px 20px;
+    background: #f9f9f9;
+    text-align: center;
+    margin-top: -15%;
+}
+
+.testimonial-item {
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+/* Footer */
+footer {
+    padding: 5em;
+    text-align: center;
+    background: #333;
+    color: #fff;
+}
+/* Define the continuous slide animation */
+@keyframes slide-pop {
+    0% {
+      opacity: 0;
+      transform: translateX(-50%);
+    }
+    25% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    75% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    100% {
+      opacity: 0;
+      transform: translateX(50%);
+    }
+  }
+  
+  /* Apply animation to each feature item with a delay */
+  .feature-item {
+    opacity: 0; /* Start hidden for the animation */
+    animation: slide-pop 15s ease-in-out infinite;
+  }
+  
+  .feature-item:nth-child(1) {
+    animation-delay: 0s;
+  }
+  
+  .feature-item:nth-child(2) {
+    animation-delay: 0.5s;
+  }
+  
+  .feature-item:nth-child(3) {
+    animation-delay: 1s;
+  }
+    
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    /* Show Hamburger Icon */
+    .hamburger {
+        display: inline-block;
+    }
+    .video-container iframe {
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    /* Hide Default Nav Links */
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Display Nav Links in Active Mode */
+    .nav-links.active {
+        display: flex;
+    }
+
+    .feature-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .feature-item {
+        width: 80%;
+    }
+
+    .hero h1 {
+        font-size: 1.8em;
+    }
+
+    .hero p {
+        font-size: 1em;
+    }
+
+    .imgcontainer img {
+        max-width: 200px;
+    }
+    /* Adjust Aspect Ratio for Larger Screens */
+@media (min-width: 768px) {
+    .video-container {
+        padding-bottom: 40%; /* Adjusted for a wider aspect ratio on desktops */
+    }
+}
+
+@media (min-width: 1024px) {
+    .video-container {
+        padding-bottom: 80%; /* Even wider for larger screens */
+    }
+}
+}
